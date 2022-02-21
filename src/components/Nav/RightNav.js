@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {Link} from 'react-router-dom'
 import {useContext} from 'react'
 import AuthContext from '../context/AuthProvider'
-import { removeCookie } from 'react-cookie';
+import { setCookie, useCookies, removeCookie } from 'react-cookie';
 
 
 const Ul = styled.ul`
@@ -91,6 +91,7 @@ const Drowdown = styled.div`
 const RightNav = ({ open }) => {
   const { auth, user } = useContext(AuthContext);
   const [menuClicked, setMenuClicked] = useState(false)
+  const [cookies, setCookie, removeCookie] = useCookies(['jwt']);
 
   const logout = async () => {
     removeCookie("jwt", { path: '/' })
