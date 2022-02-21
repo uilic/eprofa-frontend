@@ -3,10 +3,7 @@ import styled from 'styled-components';
 import {Link} from 'react-router-dom'
 import {useContext} from 'react'
 import AuthContext from '../context/AuthProvider'
-
-import axios from '../api/axios';
-
-const LOGOUT_URL = 'api/auth/logout'
+import { removeCookie } from 'react-cookie';
 
 
 const Ul = styled.ul`
@@ -96,14 +93,7 @@ const RightNav = ({ open }) => {
   const [menuClicked, setMenuClicked] = useState(false)
 
   const logout = async () => {
-    const response = await axios.post(LOGOUT_URL,
-      JSON.stringify({}),
-      {
-          headers: { 'Content-Type': 'application/json' },
-          withCredentials: true
-      }
-  );
-      console.log(response.data)
+    removeCookie("jwt", { path: '/' })
   }
 
   const handleClick = () => {

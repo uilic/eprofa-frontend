@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom'
 
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {setCookie, useCookies} from 'react-cookie';
 
 
 import axios from '../api/axios';
@@ -26,6 +27,8 @@ const Register = () => {
 
     const emailRef = useRef();
     const errRef = useRef();
+
+    const [cookies, setCookie] = useCookies(['jwt']);
 
     const [email, setEmail] = useState('');
     const [validEmail, setValidEmail] = useState(false);
@@ -95,6 +98,8 @@ const Register = () => {
             setSuccess(true);
             setAuth(true);
             setUser(response.data.user)
+            setCookie('jwt', response.data.jwt, { path: '/' });
+
 
             setFirstName('');
             setLastName('');
