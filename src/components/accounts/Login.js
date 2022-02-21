@@ -2,6 +2,7 @@ import React from 'react'
 
 import { useRef, useState, useEffect, useContext } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom'
+import {setCookie, useCookies} from 'react-cookie';
 
 import axios from '../api/axios';
 import {Link} from 'react-router-dom'
@@ -13,6 +14,7 @@ const LOGIN_URL = '/api/auth/login';
 const Login = () => {
     const navigate = useNavigate();
     const { state } = useLocation();
+    const [cookies, setCookie] = useCookies(['jwt']);
 
     const { setAuth, setUser } = useContext(AuthContext);
     const userRef = useRef();
@@ -48,6 +50,7 @@ const Login = () => {
             setEmail('');
             setPwd('');
             setSuccess(true);
+            setCookie('jwt', response.data.jwt, { path: '/' });
         } catch (err) {
             if (!err?.response) {
                 setErrMsg('No Server Response');

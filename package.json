@@ -1,7 +1,7 @@
 {
   "name": "responsive-nav",
   "version": "0.1.0",
-  "homepage":".",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
@@ -13,6 +13,8 @@
     "build": "^0.1.4",
     "js-cookie": "^3.0.1",
     "react": "^16.13.1",
+    "react-cookie": "^4.1.1",
+    "react-cookies": "^0.1.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^6.2.1",
     "react-scripts": "3.4.1",
