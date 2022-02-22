@@ -24,6 +24,7 @@ jobs:
           command: |
             git pull origin main
             npm install
+            export NODE_OPTIONS=--openssl-legacy-provider
             npm run build
             sudo systemctl restart nginx
           comment: Deploy the main branch
