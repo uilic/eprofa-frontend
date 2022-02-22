@@ -22,7 +22,7 @@ jobs:
 
           working-directory: /home/ubuntu/eprofa-frontend
           command: |
-            sudo git pull origin main
+            git pull origin main
           comment: Deploy the main branch
 
       - name: Get the outputs
