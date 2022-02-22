@@ -14,7 +14,7 @@ export const Home = () => {
     return (
         <div className="maintop">
                 <button className="buttonhome" onClick={handleLogout}>
-                protectedeeeeeee
+                protected
                 </button>
         </div>
 
