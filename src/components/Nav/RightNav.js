@@ -105,7 +105,7 @@ const RightNav = ({ open }) => {
   return (
         <Ul auth={auth} open={open}>
           <Link to='/'>Home</Link>
-          <Link to='/o-nama'>O nama</Link>
+          <Link to='/o-nama'>O namaaa</Link>
           <Link to='/pitanja'>Pitanja</Link>
           {auth ?
           <Drowdown>
