@@ -114,7 +114,7 @@ const RightNav = ({ open }) => {
             </button>
             <DropContent menuClicked={menuClicked}>
               <a href="#">Casovi</a>
-              <a href="#">Poruke</a>
+              <a href="#">Porukice</a>
               <Link to='/postani-tutor'>Postani tutor</Link>
               <a href="#">Podesavanja</a>
               <a href="/" onClick={() => logout()}>Odjava</a>
